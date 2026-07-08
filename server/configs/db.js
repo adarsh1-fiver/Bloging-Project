@@ -3,17 +3,23 @@ import mongoose from "mongoose";
 
 
 const connectDb=async () =>{
-     try {
-         mongoose.connection.on('connected' ,()=>
-        console.log("database Connected")
-        )
-         await mongoose.connect(`${process.env.MONGODB_URI}/tecoo`) 
-        }
-          catch (error) { 
-            console.log(error.message); 
+  try {
+    mongoose.connection.on('connected', () => 
+      console.log("database Connected")
+    );
+    
+    mongoose.connection.on('error', (err) => 
+      console.error("MongoDB connection error:", err)
+    );
 
-          }
-         }
+    await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: "tecoo",
+    });
+  } catch (error) {
+    console.error("Failed to connect to DB:", error.message);
+    throw error; // don't swallow it — let it surface
+  }
+}
 
 
            export default connectDb;
