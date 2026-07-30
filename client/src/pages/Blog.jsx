@@ -6,6 +6,7 @@ import Moment from 'moment'
 import Footer from '../component/Footer'
 import Loader from '../component/Loader'
 import { useAppContext } from '../../context/AppContext'
+import { toast } from 'react-hot-toast'
 
 const Blog = () => {
 
