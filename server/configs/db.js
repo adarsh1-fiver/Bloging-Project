@@ -17,7 +17,7 @@ const connectDb=async () =>{
     });
   } catch (error) {
     console.error("Failed to connect to DB:", error.message);
-    throw error; // don't swallow it — let it surface
+    throw error; //throw error
   }
 }
 
