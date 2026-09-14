@@ -10,10 +10,10 @@ import adminRouter from './routes/adminRoutes.js';
 import blogRouter from './routes/blogroutes.js';
 
 
-// dns.setServers([
-//     '1.1.1.1',
-//     '8.8.8.8'
-// ])
+dns.setServers([
+    '1.1.1.1',
+    '8.8.8.8'
+])
 
 const app=express();
 
