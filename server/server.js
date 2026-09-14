@@ -20,7 +20,9 @@ const app=express();
  connectDb()
 
 //middleware
-app.use(cors())
+app.use(cors({
+    credentials: true
+}))
 app.use(express.json())
 
 
